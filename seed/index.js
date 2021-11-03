@@ -1,8 +1,10 @@
 require("dotenv").config();
 const sequelize = require("../config/connection");
-const { User } = require("../models");
+const { User, Funds, Items } = require("../models");
 
 const userData = require("./userData.json");
+const fundsData = require("./fundsData.json");
+const itemsData = require("./itemsData.json");
 
 const seedDatabase = async () => {
   try {
@@ -11,6 +13,20 @@ const seedDatabase = async () => {
       individualHooks: true,
       returning: true,
     });
+    for (const funds of fundsData) { // val 
+      await Funds.create({
+        ...funds,
+
+      });
+    }
+    for (const item of itemsData) { // check / val
+      await Items.create({
+        ...item,
+        
+      });
+    }
+
+
     console.log("Finished seeding database.");
   } catch (error) {
     console.error(error);

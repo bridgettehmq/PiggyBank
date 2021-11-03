@@ -1,0 +1,23 @@
+[
+{
+"fund_amount": 200,
+"user_id": 1
+},
+{
+"fund_amount": 90,
+"user_id": 2
+},
+{
+"fund_amount": 150,
+"user_id": 3
+},
+{
+"fund_amount": 30,
+"user_id": 4
+},
+{
+"fund_amount": 250,
+"user_id": 5
+}           
+]
+      

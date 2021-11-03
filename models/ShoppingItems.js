@@ -37,4 +37,4 @@ ShoppingItems.init(
   }
 );
 
-module.exports = fund;
+module.exports = ShoppingItems;

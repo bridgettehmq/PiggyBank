@@ -1,14 +1,20 @@
 [
   {
-    "username": "harry",
-    "password": "password123"
+    "username": "barry",
+    "email": "barry@gmail.com",
+    "password": "password123",
+    "balance": 200
   },
   {
-    "username": "hermione",
-    "password": "password123"
+    "username": "jess",
+    "email": "jess@gmail.com",
+    "password": "password123",
+    "balance": 200
   },
   {
-    "username": "hagrid",
-    "password": "password123"
+    "username": "roger",
+    "email": "roger@gmail.com",
+    "password": "password123",
+    "balance": 200
   }
 ]

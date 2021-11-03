@@ -1,8 +1,8 @@
 // import models
-const expenses= require('./expenses');
 const fund = require('./fund');
-const saving = require('./saving');
+const shoppingItems = require('./ShoppingItems');
 const user = require('./User');
+const Transactions = require('./Transactions');
 
 
 // fund belongs to user
@@ -12,15 +12,11 @@ fund.belongsTo(user,
   });
 
 // saving belongsTo fund
-saving.belongsTo(fund, 
+fund.hasMany(shoppingItems,
   {
   foreignKey: 'fund_id'
 });
 
-expenses.belongsTo(fund, 
-    {
-    foreignKey: 'fund_id'
-  });
 
 // fund have many expenses
 
@@ -32,9 +28,9 @@ fund.hasMany(expenses,
 
 
 module.exports = {
-  expenses,
   fund,
-  saving,
+  shoppingItems,
   user,
+  Transactions
 };
 

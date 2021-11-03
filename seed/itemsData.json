@@ -1,0 +1,48 @@
+[
+{
+ "title": "movie tickets",
+ "user_id": 2,
+ "price": 15
+},
+{
+"title": "snacks",
+"user_id": 1,
+"price": 11
+},
+{
+"title": "toys",
+"user_id": 4,
+"price": 56
+},
+{
+"title": "toys",
+"user_id": 2,
+"price": 24
+},
+{
+"title": "snacks",
+"user_id": 2,
+"price": 18 
+},
+{
+"title": "video games",
+"user_id": 3,
+"price": 75
+},
+{
+"title": "movie tickets",
+"user_id": 3,
+"price": 15
+},
+{
+"title": "toys",
+"user_id": 4,
+"price": 26
+},
+{
+"title": "snacks",
+"user_id": 4,
+"price": 7 
+}
+]
+  
