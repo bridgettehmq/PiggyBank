@@ -1,5 +1,6 @@
 const { User } = require('../../models');
-
+const ShoppingItems = require('../../models/User');
+const withAuth = require("../util/withAuth");
 const router = require('express').Router();
 
 router.post('/', async (req, res) => {
@@ -56,6 +57,39 @@ router.get('/logout', (req, res) => {
     }
     res.end();
   });
+});
+
+
+
+
+//test -- bridgette
+router.patch('/user', withAuth, async function(req, res){
+  const {
+    addDollars,
+    remDollars,
+    add, 
+    remove
+  } = req.body;
+  const user = req.session.user;
+  const money = await db.getFunds(user);
+  if(add){
+      if(parseInt(addDollars) >= 0){
+        await db.addFunds(user, addDollars);
+        res.redirect('/app');
+      } else{
+        console.log("invalid amount entered.")
+      }
+  } else if (remove){
+      console.log(remDollars);
+      console.log(money);
+      if(parseInt(remDollars) <= parseInt(money)){
+       // invalid=false; // ask tutor 
+        await db.removeFunds(user, remDollars);
+        res.redirect('/app');
+      } else {
+        console.log("invalid amount entered.");
+      }
+  } 
 });
 
 module.exports = router;
