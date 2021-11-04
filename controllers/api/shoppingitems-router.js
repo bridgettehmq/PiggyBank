@@ -1,4 +1,4 @@
-const { User, ShoppingItems } = require('../../models');
+const { ShoppingItems } = require('../../models');
 const router = require('express').Router();
 const withAuth = require("../util/withAuth");
 
