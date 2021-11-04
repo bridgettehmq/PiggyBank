@@ -19,8 +19,8 @@ router.get('/', async (req, res) => {
         raw: true,
       });
     }
-    res.render('home', {
-      title: 'Home Page',
+    res.render('index', { //home
+      title: 'Home Page', // Home Page
       isLoggedIn: req.session.isLoggedIn,
       user,
     });
@@ -34,8 +34,10 @@ router.get('/login', (req, res) => {
   res.render('login', { title: 'Log-In Page' });
 });
 
-router.get('/signup', (req, res) => {
+router.get('/login', (req, res) => {
   res.render('signup', { title: 'Sign-Up Page' });
 });
+
+
 
 module.exports = router;
