@@ -1,5 +1,6 @@
+
 .btn {
-  background-color: #008cba;
+  background-color: #0e9119;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -15,3 +16,29 @@
   background-color: #e7e7e7;
   color: black;
 }
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+    .demo-card-wide.mdl-card {
+      width: 512px;
+    }
+    .demo-card-wide > .mdl-card__title {
+      color: #fef2edff;
+      height: 350px;
+      background: url('../assets/piggy-bank-logo-01.png') center / cover;
+    }
+    .mdl-card__supporting-text {
+        background-color:#fef2edff;
+        color: black;
+    }
+    .mdl-button--colored{
+        background-color: rgb(102, 146, 25);
+        color: black;
+     
+    }
+    .col-lg-6,
+    .card-app {
+      padding:30px;
+    }
