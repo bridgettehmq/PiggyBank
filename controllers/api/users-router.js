@@ -1,6 +1,5 @@
 const { User } = require('../../models');
-const ShoppingItems = require('../../models/User');
-const withAuth = require("../util/withAuth");
+//const withAuth = require('../util/withAuth'); //check this out?
 const router = require('express').Router();
 
 router.post('/', async (req, res) => {
@@ -63,19 +62,21 @@ router.get('/logout', (req, res) => {
 
 
 //test -- bridgette
-router.patch('/user', withAuth, async function(req, res){
-  const {
+router.patch('/user', async function(req, res){ //add withAuth
+  const{
     addDollars,
     remDollars,
-    add, 
-    remove
+    add,
+    remove,
   } = req.body;
-  const user = req.session.user;
-  const money = await db.getFunds(user);
+  const username = req.session.username;
+  const money = await User.getFunds(username);
+  //let invalid = !money
+  
   if(add){
       if(parseInt(addDollars) >= 0){
-        await db.addFunds(user, addDollars);
-        res.redirect('/app');
+        await User.addFunds(username, addDollars);
+        res.redirect('/user');
       } else{
         console.log("invalid amount entered.")
       }
@@ -83,13 +84,20 @@ router.patch('/user', withAuth, async function(req, res){
       console.log(remDollars);
       console.log(money);
       if(parseInt(remDollars) <= parseInt(money)){
-       // invalid=false; // ask tutor 
-        await db.removeFunds(user, remDollars);
-        res.redirect('/app');
+       // invalid=false;
+        await User.removeFunds(username, remDollars);
+        res.redirect('/user');
       } else {
         console.log("invalid amount entered.");
       }
   } 
 });
+
+
+
+
+
+
+
 
 module.exports = router;

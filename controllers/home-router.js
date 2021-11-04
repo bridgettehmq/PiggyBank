@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../models');
 
+
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
 
