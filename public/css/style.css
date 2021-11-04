@@ -1,4 +1,6 @@
-
+.card-body{
+  background-color: #fef2edff ;
+}
 .btn {
   background-color: #0e9119;
   border: none;
@@ -39,6 +41,8 @@
      
     }
     .col-lg-6,
-    .card-app {
+    .card-app
+    {
       padding:30px;
     }
+    
