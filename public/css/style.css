@@ -39,6 +39,12 @@
      
     }
     .col-lg-6,
-    .card-app {
+    .card-app
+    {
       padding:30px;
+    }
+    
+    .col-sm-9 {
+      display: grid;
+      padding-top: 60px;
     }
