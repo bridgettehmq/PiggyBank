@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 const { User, index } = require('../../models');
 const withAuth = require('../../util/withAuth');
+=======
+const { User } = require('../../models');
+//const withAuth = require('../util/withAuth'); //check this out?
+>>>>>>> c38707fbf02b8bf3de2f1c81b8567e42bcb2c9c5
 const router = require('express').Router();
 
 
@@ -59,6 +64,7 @@ router.get('/logout', (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 router.patch('/app', withAuth, async(req, res) =>{
   console.log('hi howdy hello, this works')
   const addMoney = req.body.addMoney;
@@ -114,3 +120,48 @@ router.patch('/app', withAuth, async(req, res) =>{
 //   });
 
   module.exports = router;
+=======
+
+
+
+//test -- bridgette
+router.patch('/user', async function(req, res){ //add withAuth
+  const{
+    addDollars,
+    remDollars,
+    add,
+    remove,
+  } = req.body;
+  const username = req.session.username;
+  const money = await User.getFunds(username);
+  //let invalid = !money
+  
+  if(add){
+      if(parseInt(addDollars) >= 0){
+        await User.addFunds(username, addDollars);
+        res.redirect('/user');
+      } else{
+        console.log("invalid amount entered.")
+      }
+  } else if (remove){
+      console.log(remDollars);
+      console.log(money);
+      if(parseInt(remDollars) <= parseInt(money)){
+       // invalid=false;
+        await User.removeFunds(username, remDollars);
+        res.redirect('/user');
+      } else {
+        console.log("invalid amount entered.");
+      }
+  } 
+});
+
+
+
+
+
+
+
+
+module.exports = router;
+>>>>>>> c38707fbf02b8bf3de2f1c81b8567e42bcb2c9c5

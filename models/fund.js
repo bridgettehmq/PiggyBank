@@ -32,4 +32,4 @@ Fund.init(
   }
 );
 
-module.exports = fund;
+module.exports = Fund;

@@ -13,19 +13,16 @@ ShoppingItems.init(
       autoIncrement: true,
     },
     title: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1
+      type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1
+      allowNull: false
     },
     price: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 1
+      allowNull: false
     },
   },
   {
@@ -33,8 +30,8 @@ ShoppingItems.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "User",
+    modelName: "ShoppingItems",
   }
 );
 
-module.exports = fund;
+module.exports = ShoppingItems;
