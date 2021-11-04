@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { funds } = require("../../models");
+const withAuth = require("../util/withAuth");
 
 // update your funds by adding money
 //patch or put request
