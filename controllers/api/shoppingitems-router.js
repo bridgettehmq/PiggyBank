@@ -1,8 +1,7 @@
 const { User, ShoppingItems } = require('../../models');
 const router = require('express').Router();
-
-// Requiring our custom middleware for checking if a user is logged in
 const withAuth = require("../util/withAuth");
+
   
 //get route to grab all the shopping-items // do we need?
 /*app.get("/shoppingitems", withAuth, function (req, res) {
