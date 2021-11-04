@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, ShoppingItems } = require('../models');
 
 
 // use withAuth middleware to redirect from protected routes.
@@ -19,8 +19,8 @@ router.get('/', async (req, res) => {
         raw: true,
       });
     }
-    res.render('home', {
-      title: 'Home Page',
+    res.render('index', { //home
+      title: 'Home Page', // Home Page
       isLoggedIn: req.session.isLoggedIn,
       user,
     });
@@ -35,7 +35,23 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  res.render('signup', { title: 'Sign-Up Page' });
+  res.render('login', { title: 'Sign-Up Page' });
+});
+
+router.get('/shoppinglist', async (req, res) => {
+  const shopList= await ShoppingItems.findAll({
+    //where: {
+    //  userId: req.session.userId,
+    // },
+  });
+  
+  const shoppingList= shopList.map((item) => item.get({ plain: true }));
+  
+  res.render('shoppingitms', {
+  
+    shoppingList,
+  });
+  
 });
 
 module.exports = router;

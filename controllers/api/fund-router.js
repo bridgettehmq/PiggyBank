@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { funds } = require("../../models");
-const withAuth = require("../util/withAuth");
+const withAuth = require("../../util/withAuth");
 
 // update your funds by adding money
 //patch or put request
@@ -8,7 +8,7 @@ const withAuth = require("../util/withAuth");
 //put replaces
 //seperate -- create model transaction
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const moreFunds = await funds.create({
       ...req.body,
