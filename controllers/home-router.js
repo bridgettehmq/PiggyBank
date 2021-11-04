@@ -34,20 +34,20 @@ router.get('/login', (req, res) => {
   res.render('login', { title: 'Log-In Page' });
 });
 
-router.get('/login', (req, res) => {
-  res.render('signup', { title: 'Sign-Up Page' });
+router.get('/signup', (req, res) => {
+  res.render('login', { title: 'Sign-Up Page' });
 });
 
 router.get('/shoppinglist', async (req, res) => {
   const shopList= await ShoppingItems.findAll({
-    where: {
-      userId: req.session.userId,
-    },
+    //where: {
+    //  userId: req.session.userId,
+    // },
   });
   
   const shoppingList= shopList.map((item) => item.get({ plain: true }));
   
-  res.render('shoppingList', {
+  res.render('shoppingitms', {
   
     shoppingList,
   });
