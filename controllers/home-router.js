@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, ShoppingItems } = require('../models');
+const withAuth = require('../util/withAuth');
 
 
 // use withAuth middleware to redirect from protected routes.
@@ -53,5 +54,55 @@ router.get('/shoppinglist', async (req, res) => {
   });
   
 });
+
+router.get('/user', (req, res) => {
+  res.render('user', { title: 'User Page' });
+});
+
+router.get('/fund', async (req, res) => {
+  try {
+       const user = await User.findAll(
+          { model: User, attributes: [ 'username','balance',], }, 
+          {where: {id: req.session.userId}},   
+          res.render('app', { title: 'Funds Page' }) 
+       )} catch (err) {
+          console.log(err);
+          res.status(500).json(err);
+ 
+       };
+
+// router.get('/user', async (req,res) => {
+//   try {
+//    const user = await User.findByPk(
+//       {
+//         model: User,
+//         attributes: [
+//           'username',
+//           'balance',
+//         ],
+//       }, 
+//       {
+//         where: {
+//           id: req.session.userId,
+//         },
+//       }
+// );
+// res.render('user', {
+  
+//   user,
+// });
+// } catch (err) {
+//   console.log(err);
+//   res.status(500).json(err);
+// }
+// });
+
+// router.get('/fund',  (req, res) => {
+//   if (req.session.loggedIn) {
+//       res.redirect('/login');
+//       return;
+//   }
+//   res.render('fund');
+// });
 
 module.exports = router;

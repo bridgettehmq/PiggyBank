@@ -1,29 +1,29 @@
-const todoInput = document.querySelector('#todo-text');
+const itemInput = document.querySelector('#todo-text');
 const todoForm = document.querySelector('#todo-form');
-const todoList = document.querySelector('#todo-list');
+const shoppingList = document.querySelector('#todo-list');
 const todoCountSpan = document.querySelector('#todo-count');
 
-const todos = [];
+const list = [];
 
 // The following function renders items in a todo list as <li> elements
-function renderTodos() {
+function renderList() {
   // Clear todoList element and update todoCountSpan
-  todoList.innerHTML = '';
-  todoCountSpan.textContent = todos.length;
+  shoppingList.innerHTML = '';
+  todoCountSpan.textContent = list.length;
 
   // Render a new li for each todo
-  for (const i = 0; i < todos.length; i++) {
-    const todo = todos[i];
+  for (const i = 0; i < list.length; i++) {
+    const todo = list[i];
 
     const li = document.createElement('li');
     li.textContent = todo;
     li.setAttribute('data-index', i);
 
     const button = document.createElement('button');
-    button.textContent = 'Complete ✔️';
+    button.textContent = 'Added ✔️';
 
     li.appendChild(button);
-    todoList.appendChild(li);
+    shoppingList.appendChild(li);
   }
 }
 
@@ -38,19 +38,19 @@ function init() {
   }
 
   // This is a helper function that will render todos to the DOM
-  renderTodos();
+  renderList();
 }
 
 function storeTodos() {
   // Stringify and set key in localStorage to todos array
-  localStorage.setItem('todos', JSON.stringify(todos));
+  localStorage.setItem('todos', JSON.stringify(list));
 }
 
 // Add submit event to form
 todoForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const todoText = todoInput.value.trim();
+  const todoText = itemInput.value.trim();
 
   // Return from function early if submitted todoText is blank
   if (todoText === '') {
@@ -58,27 +58,27 @@ todoForm.addEventListener('submit', function (event) {
   }
 
   // Add new todoText to todos array, clear the input
-  todos.push(todoText);
-  todoInput.value = '';
+  list.push(todoText);
+  itemInput.value = '';
 
   // Store updated todos in localStorage, re-render the list
   storeTodos();
-  renderTodos();
+  renderList();
 });
 
 // Add click event to todoList element
-todoList.addEventListener('click', function (event) {
+shoppingList.addEventListener('click', function (event) {
   const element = event.target;
 
   // Checks if element is a button
   if (element.matches('button') === true) {
     // Get its data-index value and remove the todo element from the list
     const index = element.parentElement.getAttribute('data-index');
-    todos.splice(index, 1);
+    list.splice(index, 1);
 
     // Store updated todos in localStorage, re-render the list
     storeTodos();
-    renderTodos();
+    renderList();
   }
 });
 

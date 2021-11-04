@@ -1,5 +1,5 @@
 const { User } = require('../../models');
-//const withAuth = require('../util/withAuth'); //check this out?
+const withAuth = require('../../util/withAuth'); //check this out?
 const router = require('express').Router();
 
 
@@ -64,42 +64,24 @@ router.get('/logout', (req, res) => {
   });
 });
 
-
-
-
-//test -- bridgette
-router.patch('/user', async function(req, res){ //add withAuth
-  const{
-    addDollars,
-    remDollars,
-    add,
-    remove,
-  } = req.body;
-  const username = req.session.username;
-  const money = await User.getFunds(username);
-  //let invalid = !money
-  
-  if(add){
-      if(parseInt(addDollars) >= 0){
-        await User.addFunds(username, addDollars);
-        res.redirect('/user');
-      } else{
-        console.log("invalid amount entered.")
+router.put("/funds", withAuth, async (req, res) => {
+  try {
+    const result = await User.update(
+      {
+        balance: req.body.balance,
+      },
+      {
+        where: {
+          id: req.session.userId,
+        },
       }
-  } else if (remove){
-      console.log(remDollars);
-      console.log(money);
-      if(parseInt(remDollars) <= parseInt(money)){
-       // invalid=false;
-        await User.removeFunds(username, remDollars);
-        res.redirect('/user');
-      } else {
-        console.log("invalid amount entered.");
-      }
-  } 
+    );
+    return res.json(result);
+  } catch (err) {
+    console.log (err);
+    res.status(500).json(err);
+  }
 });
-
-
 
 
 
