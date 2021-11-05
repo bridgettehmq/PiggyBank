@@ -2,23 +2,17 @@
 const handleSignupSubmit = async (event) => {
   event.preventDefault();
   try {
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
-    const confirmPassword = document
-      .querySelector('#confirm-password')
-      .value.trim();
+    const username = document.querySelector('#signup-username').value.trim();
+    const password = document.querySelector('#signup-password').value.trim();
+  
 
     if (!username || !password) {
       alert('You must provide a username and password.');
       return;
     }
 
-    if (password !== confirmPassword) {
-      alert('Passwords to not match.');
-      return;
-    }
 
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: {

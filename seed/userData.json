@@ -1,19 +1,16 @@
 [
   {
     "username": "barry",
-    "email": "barry@gmail.com",
     "password": "password123",
     "balance": 200
   },
   {
     "username": "jess",
-    "email": "jess@gmail.com",
     "password": "password123",
     "balance": 200
   },
   {
     "username": "roger",
-    "email": "roger@gmail.com",
     "password": "password123",
     "balance": 200
   }
