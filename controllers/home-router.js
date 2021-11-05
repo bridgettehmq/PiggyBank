@@ -1,14 +1,6 @@
-const router = require('express').Router();
-const { User, ShoppingItems } = require('../models');
-const withAuth = require('../util/withAuth');
-
-// use withAuth middleware to redirect from protected routes.
-// const withAuth = require("../util/withAuth");
-
-// example of a protected route
-// router.get("/users-only", withAuth, (req, res) => {
-//   // ...
-// });
+const router = require("express").Router();
+const { User, ShoppingItems } = require("../models");
+const withAuth = require("../util/withAuth");
 
 router.get("/", async (req, res) => {
   try {
@@ -40,11 +32,7 @@ router.get("/signup", (req, res) => {
 });
 
 router.get("/shoppinglist", async (req, res) => {
-  const shopList = await ShoppingItems.findAll({
-    //where: {
-    //  userId: req.session.userId,
-    // },
-  });
+  const shopList = await ShoppingItems.findAll({});
 
   const shoppingList = shopList.map((item) => item.get({ plain: true }));
 
@@ -53,54 +41,20 @@ router.get("/shoppinglist", async (req, res) => {
   });
 });
 
-router.get('/user', (req, res) => {
-  res.render('user', { title: 'User Page' });
+router.get("/user", (req, res) => {
+  res.render("user", { title: "User Page" });
 });
 
-router.get('/fund', async (req, res) => {
+router.get("/fund", async (req, res) => {
   try {
-       const user = await User.findAll(
-          { model: User, attributes: [ 'username','balance',], }, 
-          {where: {id: req.session.userId}},   
-          res.render('app', { title: 'Funds Page' }) 
-       )} catch (err) {
-          console.log(err);
-          res.status(500).json(err);
- 
-       };
-
-// router.get('/user', async (req,res) => {
-//   try {
-//    const user = await User.findByPk(
-//       {
-//         model: User,
-//         attributes: [
-//           'username',
-//           'balance',
-//         ],
-//       }, 
-//       {
-//         where: {
-//           id: req.session.userId,
-//         },
-//       }
-// );
-// res.render('user', {
-  
-//   user,
-// });
-// } catch (err) {
-//   console.log(err);
-//   res.status(500).json(err);
-// }
-// });
-
-// router.get('/fund',  (req, res) => {
-//   if (req.session.loggedIn) {
-//       res.redirect('/login');
-//       return;
-//   }
-//   res.render('fund');
-// });
-
+    const user = await User.findAll(
+      { model: User, attributes: ["username", "balance"] },
+      { where: { id: req.session.userId } }
+    );
+    res.render("app", { title: "Funds Page" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
