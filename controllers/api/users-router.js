@@ -5,25 +5,6 @@ const router = require('express').Router();
 
 //this is wrong
 
-router.post('/signup', async (req, res) => { 
-  const { username, password } = req.body;
-  try {
-    const user = await User.create({ username, password });
-    req.session.save((err) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).json({ message: 'Internal server error.' });
-      }
-      req.session.isLoggedIn = true;
-      req.session.userId = user.id;
-      req.session.username = user.username;
-      res.json({ id: user.id });
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Internal server error.' });
-  }
-});
 
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
@@ -50,6 +31,26 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: 'Invalid username or password.' });
+  }
+});
+
+router.post('/signup', async (req, res) => { 
+  const { username, password } = req.body;
+  try {
+    const user = await User.create({ username, password });
+    req.session.save((err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Internal server error.' });
+      }
+      req.session.isLoggedIn = true;
+      req.session.userId = user.id;
+      req.session.username = user.username;
+      res.json({ id: user.id });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error.' });
   }
 });
 
