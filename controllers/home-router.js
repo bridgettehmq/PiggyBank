@@ -47,11 +47,12 @@ router.get("/user", (req, res) => {
 
 router.get("/fund", async (req, res) => {
   try {
-    const user = await User.findAll(
+    const userData = await User.findByPk(
+      req.session.userId, 
       { model: User, attributes: ["username", "balance"] },
-      { where: { id: req.session.userId } }
     );
-    res.render("app", { title: "Funds Page" });
+    const user = userData.get({ plain: true})
+    res.render("app", { title: "Funds Page", user});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
