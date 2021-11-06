@@ -5,11 +5,11 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 
 ## Table of contents
 
-  - [Table of contents](#table-of-contents)
+  - [Table of Contents](#table-of-contents)
   - [Project Requirements](#project-requirements)
   - [Technologies Used](#technologies-used)
-  - [The development process](#the-development-process)
-  - [Installation and Usage](#installation-and-usage)
+  - [The Development Process](#the-development-process)
+  - [Usage](#Usage)
   - [Future Development](#potential-features-for-future-development)
   - [Contributing](#this-application-was-developed-by)
   - [License](#license)
