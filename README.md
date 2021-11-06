@@ -51,13 +51,6 @@ The deployed applicated can be accessed at:https://piggybank200.herokuapp.com/lo
 The app can be installed with the github repository: https://github.com/bridgettequiambao/PiggyBank
 
 
-## Setup
-
-1. Home Page 
-2. You will need an existing MySQL database.
-3. Create `.env` file with MySQL credentials for local development and a SECRET. Refer to [.env.EXAMPLE](./.env.EXAMPLE)
-4. Run `npm start` to start the app.
-
 ## Code Style
 
 [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) are included for enforcing consistent code quality and format. The default configuration includes the ESLint recommended plugin, the Prettier plugin, plus a couple of additional rules. Modify [.eslintrc.js](./.eslintrc.json) to customize the rules.
