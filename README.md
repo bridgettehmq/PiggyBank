@@ -6,7 +6,7 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 
 - Project Requirements.
 - Technologies Used.
-- Useage.
+- Usage.
 - Devolpers.
 
 ## Project Requirements 
