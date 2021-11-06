@@ -43,6 +43,14 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 - CSS
 - Chart.js
 
+## Usage
+
+
+The deployed applicated can be accessed at:https://piggybank200.herokuapp.com/login
+
+The app can be installed with the github repository: https://github.com/bridgettequiambao/PiggyBank
+
+
 ## Setup
 
 1. Home Page 
