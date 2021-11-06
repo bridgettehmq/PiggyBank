@@ -1,6 +1,6 @@
 # Piggy Bank 🐷💰
 
-Welcome to Piggy Bank, a full-stack web application using the MVC paradigm created to teach kids financial responsibility and save them from a lifetime of frustration! Piggy Bank simple and easy-to-use, a place where kids can virtually track their money and visualize actual spending by category. It helps a kid with the understanding of basic financial lessons such as cash inflow, expenses (outflow) and the running balance.
+Welcome to Piggy Bank, a full-stack web application using the MVC paradigm created to teach kids financial responsibility and save them from a lifetime of frustration! Piggy Bank is simple and easy-to-use. It is a place where kids can virtually track their money and visualize actual spending by category. It helps a kid with the understanding of basic financial lessons such as cash inflow, expenses (outflow) and the running balance.
 
 ## Table of Contents 
 
