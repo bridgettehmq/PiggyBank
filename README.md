@@ -1,6 +1,6 @@
 # Piggy Bank 🐷💰
 
-Welcome to Piggy Bank, a full-stack web application using the MVC paradigm created to help kids manage their money. 
+Welcome to Piggy Bank, a full-stack web application using the MVC paradigm created to teach kids financial responsibility and save them from a lifetime of frustration! Piggy Bank simple and easy-to-use, a place where kids can virtually track their money and visualize actual spending by category. It helps a kid with the understanding of basic financial lessons such as cash inflow, expenses (outflow) and the running balance.
 
 ## Table of Contents 
 
@@ -28,6 +28,14 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 
 ## Technologies Used:
 
+- Node.js
+- Express.js
+- Handlebars.js 
+- MySQL
+- Sequelize ORM
+- HTML
+- CSS
+- Chart.js
 
 ## Setup
 
@@ -57,16 +65,14 @@ You can add your own custom helper functions by exporting them from [util/helper
 
 ## Potential features for future development 
 
-- Additional Drink Search Parameters
-    - Having a choice for Alcoholic vs. Non-Alcoholic would allow for a wider user audience and more inclusive experience.
-- Random Ingredient Suggestion
-    - If the user does not have an ingredient in mind, having a randomizer would allow our application to be more flexible.
-- Better Food-Favorites Functionality
-    - Preventing the user from adding a recipe to the favorites twice.
-- Recipe Photos 
-    - Adding recipe photos would be more enticing and exciting for the user!
-- CSS Layout 
-    - Development on fonts, backgroud colors, buttons, etc to better user's visual experience. 
+- Ability to set weekly spending limits
+    - Kids can create weekly spending limits. If a user exceeds their set amount, the app will alert the user. 
+-  AutoSave
+    - If the user adds funds, the app can automatically save a percentage of those funds. The user can set the percentage value. The saved amount will not display as a part of the total amount in the account. Instead, it will be displayed as a separate value.
+- Ability to create savings goals 
+    - The user can create savings goals. Each savings goal should have its own name and description. The user can assign any available amount from the savings fund to a savings goal. The user can continue to save without assigning funds from the savings to a goal. 
+- Categorize and choose expenses
+    - Kids can categorize their future expenses and be able to visualize with a chart where their future expenses will go. If a kid would like to spend a larger or a smaller percentage of their total expenses in one category of expenses, the app will be able to calculate how much less or more the kid can spend to achieve that amount. For example, if a child wants to only spend 30% of their total future expenses on toys, the app will give a dollar amount of how much less or more the kid can spend. 
 
 ### Developers:
 
