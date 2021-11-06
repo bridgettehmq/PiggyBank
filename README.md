@@ -7,7 +7,19 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 - Project Requirements.
 - Technologies Used.
 - Usage.
-- Devolpers.
+- Developers.
+
+## Table of contents
+
+  - [Table of contents](#table-of-contents)
+  - [Technologies Used](#technologies-used)
+  - [The development process](#the-development-process)
+  - [The Output](#the-output)
+  - [Installation and Usage](#installation-and-usage)
+  - [Future Development](#potential-features-for-future-development)
+  - [Contributing](#this-application-was-developed-by)
+  - [License](#license)
+  - [Questions](#questions)
 
 ## Project Requirements 
 
@@ -26,7 +38,7 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 - [x] Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 - [x] Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Technologies Used:
+## Technologies Used
 
 - Node.js
 - Express.js
@@ -39,25 +51,10 @@ Welcome to Piggy Bank, a full-stack web application using the MVC paradigm creat
 
 ## Setup
 
-1. Run `npm i`.
+1. Home Page 
 2. You will need an existing MySQL database.
 3. Create `.env` file with MySQL credentials for local development and a SECRET. Refer to [.env.EXAMPLE](./.env.EXAMPLE)
 4. Run `npm start` to start the app.
-
-
-## Sessions
-
-[express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) are used for session management. Configure cookies and sessions in [config/session.js](./config/session.js)
-
-## Authentication
-
-Passwords are hashed using [bcrypt](https://www.npmjs.com/package/bcrypt). Middleware for protected routes redirects to `/login`. This can be modified by updating [util/withAuth.js](./util/withAuth.js).
-
-## Templates
-
-[Handlebars.js](https://handlebarsjs.com/) and [express-handlebars](https://www.npmjs.com/package/express-handlebars) are used for rendering templates.
-
-You can add your own custom helper functions by exporting them from [util/helpers.js](./util/helpers.js).
 
 ## Code Style
 
@@ -73,8 +70,6 @@ You can add your own custom helper functions by exporting them from [util/helper
     - The user can create savings goals. Each savings goal should have its own name and description. The user can assign any available amount from the savings fund to a savings goal. The user can continue to save without assigning funds from the savings to a goal. 
 - Categorize and choose expenses
     - Kids can categorize their future expenses and be able to visualize with a chart where their future expenses will go. If a kid would like to spend a larger or a smaller percentage of their total expenses in one category of expenses, the app will be able to calculate how much less or more the kid can spend to achieve that amount. For example, if a child wants to only spend 30% of their total future expenses on toys, the app will give a dollar amount of how much less or more the kid can spend. 
-
-### Developers:
 
 ## This application was developed by:
 
@@ -105,3 +100,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Questions
+
+If you have questions or you want to share comments, we will be glad to hear from you. Please contact us at bridgettequiambao@gmail.com.
